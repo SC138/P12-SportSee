@@ -1,9 +1,13 @@
-import { useState } from "react";
+import "./global.css";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
-function App() {
-  return <>
-  
-  </>;
+
+export function App() {
+  return (
+    <>
+    <Dashboard />
+    </>
+  );
 }
 
 export default App;
