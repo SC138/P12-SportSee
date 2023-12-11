@@ -1,0 +1,41 @@
+.containerChart{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #FF0000;
+    border-radius: 5px;
+    margin-left: 130px;
+    overflow: hidden;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    background-color: #0000;
+    opacity: 0.5;
+    pointer-events: "none";
+}
+
+.title{
+    width: 80%;   
+    margin-left: 40px;
+    margin-top: 40px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.axis{
+    opacity: 0.5;
+
+}
+
+.customTooltip{
+    background-color: #fff;
+}
+
+.label{
+    padding: 10px;
+}
+
+
+
