@@ -1,0 +1,19 @@
+.main{
+    width: 90%;
+    height: 100vh;
+    position: absolute;
+    left: 260px;
+    top: 150px;
+}
+
+.main h1{
+    font-size: 48px;
+    font-weight: 500;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+}
+
+.userName{
+    color: red;
+}

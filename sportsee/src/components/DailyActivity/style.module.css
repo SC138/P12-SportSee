@@ -1,0 +1,66 @@
+.container{
+    position: relative;
+    width: 900px;
+    height: 250px;
+    margin-bottom: 100px;
+    background-color: #FBFBFB;
+    padding: 20px;
+    padding-bottom: 70px;
+    margin-top: 80px;
+    border-radius: 10px;
+}
+
+.title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.containerKg, .containerKcal{
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    margin-right: 15px;
+    top: -15px;
+    color: #74798C;
+}
+
+.containerKg{
+    right: 170px;
+
+}
+
+.containerKcal{
+    right: -30px;
+}
+
+.circleKg{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #282D30;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.circleKcal{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #E60000;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tooltip{
+    background-color: #E60000;
+}
+
+.label{
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 12px;
+}

@@ -144,8 +144,8 @@ export function DurationSessions({ user }) {
 
 DurationSessions.propTypes = {
   user: PropTypes.string.isRequired,
-  payload: PropTypes.string.isRequired,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
-  active: PropTypes.bool.isRequired,
+  payload: PropTypes.string,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  active: PropTypes.bool,
 };

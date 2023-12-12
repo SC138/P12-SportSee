@@ -1,11 +1,11 @@
-// import s from "./style.module.css";
+import s from "./style.module.css";
 import { HorizontalMenu } from "../../components/HorizontalMenu/HorizontalMenu";
 import { VerticalMenu } from "../../components/VerticalMenu/VerticalMenu";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DataService } from "../../api/dataService";
 import { DurationSessions } from "../../components/DurationSessions/DurationSessions";
-
+import {DailyActivity} from "../../components/DailyActivity/DailyActivity";
 
 export function Dashboard() {
   const { id } = useParams();
@@ -27,14 +27,14 @@ export function Dashboard() {
   return (
     <>
       <HorizontalMenu />
-      <h1>Bonjour {userName}</h1>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-      <DurationSessions user={id} />
       <VerticalMenu />
+      <div className={s.main}>
+      <h1>Bonjour <span className={s.userName}>{userName}</span></h1>
+      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      <DailyActivity user={id} />
+      <DurationSessions user={id} />
+      </div>
     </>
   );
 }
 
-// Dashboard.propTypes = {
-//   user: PropTypes.string.isRequired,
-// };
