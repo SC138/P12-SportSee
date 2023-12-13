@@ -13,10 +13,13 @@ import PropTypes from "prop-types";
 import { USER_AVERAGE } from "../../api/config";
 
 export function DurationSessions({ user }) {
+  // Labels pour les jours de la semaine.
   const data = ["L", "M", "M", "J", "V", "S", "D"];
 
+  // State pour stocker les sessions de l'utilisateur.
   const [sessions, setSessions] = useState("");
 
+  // useEffect pour charger les données de performance après le montage du composant.
   useEffect(() => {
     async function getDurationSessions() {
       try {
@@ -24,8 +27,10 @@ export function DurationSessions({ user }) {
           user,
           USER_AVERAGE
         );
+        // Mise à jour du state avec les données de performance.
         setSessions(durationSessions.data.sessions);
       } catch (error) {
+        // Gestions des erreurs.
         console.log(
           error,
           "Erreur lors de la récupération des données des sessions"
@@ -35,12 +40,14 @@ export function DurationSessions({ user }) {
     getDurationSessions();
   }, [user]);
 
+  // Ajout des labels pour les jours de la semaine.
   if (sessions) {
     sessions.map((session, index) => {
       session.day = data[index];
     });
   }
 
+  // Composant personnalisé pour l'axe X.
   const CustomXAxis = ({ x, y, payload }) => {
     return (
       <g transform={`translate(${x},${y})`}>
@@ -59,6 +66,7 @@ export function DurationSessions({ user }) {
     );
   };
 
+  // Composant personnalisé pour l'affichage des tooltips.
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -70,13 +78,16 @@ export function DurationSessions({ user }) {
     return null;
   };
 
+  // State pour stocker les données de la session survolée.
   const [hoveredData, setHoveredData] = useState(null);
 
+  // Fonction pour gérer le survol de la souris sur le graphique.
   const handleMouseOver = (event) => {
     const x = event.nativeEvent.offsetX;
     const y = event.nativeEvent.offsetY;
     const containerHeight = event.currentTarget.clientHeight;
 
+    // Mise à jour des données de la session survolée.
     setHoveredData({ x, y, overlayHeight: containerHeight - y });
   };
 

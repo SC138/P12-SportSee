@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DataService } from "../../api/dataService";
 import { DurationSessions } from "../../components/DurationSessions/DurationSessions";
-import {DailyActivity} from "../../components/DailyActivity/DailyActivity";
+import { DailyActivity } from "../../components/DailyActivity/DailyActivity";
+import { PerformanceUser } from "../../components/PerformanceUser/PerformanceUser";
 
 export function Dashboard() {
   const { id } = useParams();
@@ -29,12 +30,16 @@ export function Dashboard() {
       <HorizontalMenu />
       <VerticalMenu />
       <div className={s.main}>
-      <h1>Bonjour <span className={s.userName}>{userName}</span></h1>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-      <DailyActivity user={id} />
-      <DurationSessions user={id} />
+        <h1>
+          Bonjour <span className={s.userName}>{userName}</span>
+        </h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <DailyActivity user={id} />
+        <div className={s.widgets}>
+          <DurationSessions user={id} />
+          <PerformanceUser user={id} />
+        </div>
       </div>
     </>
   );
 }
-
