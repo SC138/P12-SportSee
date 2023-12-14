@@ -7,6 +7,8 @@ import { DataService } from "../../api/dataService";
 import { DurationSessions } from "../../components/DurationSessions/DurationSessions";
 import { DailyActivity } from "../../components/DailyActivity/DailyActivity";
 import { PerformanceUser } from "../../components/PerformanceUser/PerformanceUser";
+import { Score } from "../../components/Score/Score";
+import { CardInfos } from "../../components/CardInfos/CardInfos";
 
 export function Dashboard() {
   const { id } = useParams();
@@ -25,6 +27,7 @@ export function Dashboard() {
     }
     getUserData();
   }, [id]);
+
   return (
     <>
       <HorizontalMenu />
@@ -38,7 +41,11 @@ export function Dashboard() {
         <div className={s.widgets}>
           <DurationSessions user={id} />
           <PerformanceUser user={id} />
+          <Score user={id} />
         </div>
+      </div>
+      <div className={s.cards}>
+        <CardInfos user={id} />
       </div>
     </>
   );

@@ -19,7 +19,24 @@
 }
 
 .widgets{
+    width: max-content;
+    height: max-content;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
+    gap: 60px;
+    margin-top: 30px;
+    /* margin-left: -60px; */
+}
+
+.cards {
+    width: 300px; /* Largeur de la sidebar, à ajuster */
+    position: absolute; /* Positionnement absolu par rapport à .main */
+    top: 0;
+    right: 100px; /* Alignez à droite */
+    height: 300px; /* Hauteur complète */
+    /* ...autres styles... */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: start; /* Alignez les éléments en haut */
 }

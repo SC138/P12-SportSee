@@ -1,0 +1,65 @@
+.container {
+    margin-top: 265px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blocContainer {
+    display: flex;
+    width: 80%;
+    height: 7.5vh;
+    margin-top: 95px;
+    align-items: center;
+    background-color: #fcfcfc;
+    /* background-color: red; */
+    border-radius: 5px;
+    padding: 5px 20px 20px 20px;
+}
+
+.containerEnergy {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.paraf {
+    font-size: 1.2em;
+    font-family: "Roboto-Bold";
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #74798C;
+}
+
+.iconeKcal {
+    width: 30px;
+    margin-top: 20px;
+    background-color: #ff000055;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.iconeProt {
+    width: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #49b9ff4c;
+}
+
+.iconeGlu {
+    width: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fccb094c;
+}
+
+.iconeLip {
+    width: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fd50814c;
+}
