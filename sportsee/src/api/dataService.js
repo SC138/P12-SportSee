@@ -1,3 +1,4 @@
+// MODE PROD
 import axios from "axios";
 import { BASE_URL, USER } from "./config";
 
@@ -27,3 +28,33 @@ export class DataService {
     }
   }
 }
+
+// MODE MOCK
+// import { userMock } from "../../MockData/MockData";
+
+// export class DataService {
+//   static async getUser(userId) {
+//     try {
+//       return {
+//         data: userMock[userId],
+//       };
+//     } catch (error) {
+//       console.error(
+//         error,
+//         "Erreur de récupération des données utilisateur depuis l'API"
+//       );
+//     }
+//   }
+//   static async getUserData(userId, stats = null) {
+//     try {
+//       return {
+//         data: stats[userId],
+//       };
+//     } catch (error) {
+//       console.error(
+//         error,
+//         "Erreur de récupération des données utilisateur depuis l'API"
+//       );
+//     }
+//   }
+// }

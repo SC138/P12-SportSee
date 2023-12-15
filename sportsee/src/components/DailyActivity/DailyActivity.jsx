@@ -15,32 +15,40 @@ import {
 import PropTypes from "prop-types";
 
 export function DailyActivity({ user }) {
+  // État pour stocker les données d'activité quotidienne.
   const [dailyActivity, setDailyActivity] = useState("");
 
-  //data.sessions.day kilogram calories
+  // Effet pour récupérer les données d'activité dès que l'identifiant de l'utilisateur est connu.
   useEffect(() => {
     async function getDailyActivity() {
       try {
+        // Appel à l'API pour obtenir les données d'activité.
         const userActivity = await DataService.getUserData(user, USER_ACTIVITY);
+        // Mise à jour de l'état avec les données reçues.
         setDailyActivity(userActivity.data.sessions);
       } catch (error) {
+        // Gestion des erreurs.
         console.log(
           error,
           "Erreur lors de la récupération des données des sessions"
         );
       }
     }
+    // Appel de la fonction asynchrone.
     getDailyActivity();
-  }, [user]);
+    // Dépendance de l'effet : l'identifiant de l'utilisateur.
+  }, [user]); 
 
+  // Mise en forme des données pour le graphique.
   if (dailyActivity) {
     dailyActivity.map((item, index) => {
-      item.day = index + 1;
+      // Ajout d'un champ 'day' pour affichage sur l'axe X.
+      item.day = index + 1; 
     });
   }
 
+  // Légende personnalisée pour le graphique.
   const legend = ["Poids (kg)", "Calories brûlées (kCal)"];
-
   const customLegend = () => {
     return (
       <>
@@ -56,6 +64,7 @@ export function DailyActivity({ user }) {
     );
   };
 
+  // Tooltip personnalisé pour le graphique.
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -66,7 +75,7 @@ export function DailyActivity({ user }) {
       );
     }
     return null;
-  }
+  };
 
   return (
     <>
