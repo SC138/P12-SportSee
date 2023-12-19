@@ -1,9 +1,9 @@
 .main{
-    width: 90%;
-    height: 100vh;
+    /* width: 100%; */
     position: absolute;
     left: 260px;
-    top: 150px;
+    top: 120px;
+
 }
 
 .main h1{
@@ -14,29 +14,71 @@
     margin-bottom: 0;
 }
 
+
 .userName{
     color: red;
 }
 
-.widgets{
-    width: max-content;
-    height: max-content;
+.containerBlock {
+    width: 81vw;
     display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-top: 30px;
+    align-content: flex-start;
+    gap: 70px;
+}
+
+.containerCharts{
+    width: 65%;
+}
+
+.widgets{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* align-items: center; */
+    /* gap: 60px; */
+    margin-top: 20px;
     /* margin-left: -60px; */
 }
 
 .cards {
-    width: 300px; /* Largeur de la sidebar, à ajuster */
-    position: absolute; /* Positionnement absolu par rapport à .main */
+    /* width: 280px;  */
+    /* position: absolute; 
     top: 0;
-    right: 100px; /* Alignez à droite */
-    height: 300px; /* Hauteur complète */
-    /* ...autres styles... */
+    right: 100px;  */
+    /* height: 300px;  */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    justify-content: start; /* Alignez les éléments en haut */
+    justify-content: start; 
+}
+
+@media screen and (max-width: 1024px) {
+    .main{
+        top: 80px;
+        left: 160px;
+    }
+
+    .title{
+        width: 50%;
+        font-size: 36px;
+    }
+
+    .text{
+        width: 50%;
+        font-size: 18px;
+    }
+
+
+    .containerBlock {
+        width: 83vw;
+        gap: 30px;
+    }
+
+    .containerCharts{
+        width: 85%;
+    }
+
+    .widgets{
+        gap: 25px;
+    }
+
 }

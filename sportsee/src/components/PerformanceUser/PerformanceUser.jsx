@@ -71,17 +71,17 @@ export function PerformanceUser({ user }) {
   // Rendu du graphique radar avec les données de performance transformées.
   return (
     <div className={s.radarChart}>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="85%">
         <RadarChart
           cx="49%"
-          cy="50%"
+          cy="60%"
           outerRadius="68%"
           data={dataForRadarChart}
         >
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
-            tick={{ fontSize: "12px", dy: 4 }}
+            tick={{ fontSize: "0.55em", dy: 4 }}
             stroke="#fff"
             axisLine={false}
             tickLine={false}

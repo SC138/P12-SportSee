@@ -1,5 +1,5 @@
 .container {
-    width: 100%;
+    width: 100vw;
     height: 90px;
     background-color: black;
     box-shadow: 0px 5px 3px 0px rgba(0,0,0,0.2);
@@ -18,7 +18,7 @@
 }
 
 .menu{
-    width: 96%;
+    /* width: 96%; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -30,4 +30,23 @@
     list-style-type: none;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .container{
+        width: 100vw;
+    }
+
+    .logo > img{
+        width: 150px;
+    }
+
+    .nav{
+        margin-left: -10px;
+    }
+
+    .element{
+        font-size: 20px;
+    }
+    
 }

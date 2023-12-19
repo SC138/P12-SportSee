@@ -32,21 +32,25 @@ export function Dashboard() {
     <>
       <HorizontalMenu />
       <VerticalMenu />
-      <div className={s.main}>
-        <h1>
+      <section className={s.main}>
+        <h1 className={s.title}>
           Bonjour <span className={s.userName}>{userName}</span>
         </h1>
-        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-        <DailyActivity user={id} />
-        <div className={s.widgets}>
-          <DurationSessions user={id} />
-          <PerformanceUser user={id} />
-          <Score user={id} />
+        <p className={s.text}>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <div className={s.containerBlock}>
+          <div className={s.containerCharts}>
+            <DailyActivity user={id} />
+            <div className={s.widgets}>
+              <DurationSessions user={id} />
+              <PerformanceUser user={id} />
+              <Score user={id} />
+            </div>
+          </div>
+          <div className={s.cards}>
+            <CardInfos user={id} />
+          </div>
         </div>
-      </div>
-      <div className={s.cards}>
-        <CardInfos user={id} />
-      </div>
+      </section>
     </>
   );
 }

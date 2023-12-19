@@ -1,12 +1,13 @@
 .container{
     position: relative;
-    width: 900px;
-    height: 250px;
+    width: 85%;
+    height: 200px;
     margin-bottom: 100px;
     background-color: #FBFBFB;
+    /* background-color: red; */
     padding: 60px;
-    padding-bottom: 70px;
-    margin-top: 80px;
+    padding-bottom: 50px;
+    margin-top: 60px;
     border-radius: 5px;
 }
 
@@ -63,4 +64,69 @@
     text-align: center;
     padding: 15px 10px;
     font-size: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container{
+        width: 490px;
+        height: 180px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+    .title{
+        padding-bottom: 7px;
+    }
+
+    .containerKg, .containerKcal{
+        display: flex;
+        width: max-content;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        margin-right: 15px;
+        top: -15px;
+        color: #74798C;
+    }
+
+    .containerKg{
+        right: 170px;
+
+    }
+
+    .containerKcal{
+        right: -30px;
+    }
+
+    .circleKg{
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #282D30;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .circleKcal{
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #E60000;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .tooltip{
+        background-color: #E60000;
+    }
+
+    .label{
+        color: white;
+        text-align: center;
+        padding: 15px 10px;
+        font-size: 12px;
+    }
+    
 }

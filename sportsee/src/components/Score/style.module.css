@@ -1,9 +1,10 @@
 .containerPieChart {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
     border-radius: 5px;
     background-color: #fcfcfc;
+    /* background-color: red; */
 }
 .subtitle {
     width: 60%;
@@ -27,5 +28,32 @@
     color: #282D30;
     font-family: 'Roboto-Bold';
     padding-bottom: 20px;
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .containerPieChart {
+        width: 180px;
+        height: 180px;
+    }
+    .subtitle {
+        font-size: 13px;
+        width: 60%;
+        position: absolute;
+        top: 5px;
+        left: 15px;
+    }
+    .customLabel {
+        font-size: 14px;
+        width: 60px;
+        top: 43%;
+        left: 50%;
+    }
+    .customScore {
+        display: block;
+        font-size: 16px;
+        margin: 0;
+        padding-bottom: 0;
+    }
     
 }
