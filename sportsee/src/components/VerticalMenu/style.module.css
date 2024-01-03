@@ -44,4 +44,9 @@
         width: 50px;
         padding: 10px;
     }
+
+    .copyright{
+        font-size: 12px;
+        margin-top: 150px;
+    }
 }
