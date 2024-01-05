@@ -36,6 +36,9 @@ export function Dashboard() {
           userFirstName.data &&
           userFirstName.data.userInfos
         ) {
+
+        // Vérification des données reçues
+        if (userFirstName && userFirstName.data && userFirstName.data.userInfos) {
           // Si les données sont valides, mise à jour du prénom de l'utilisateur
           setUserName(userFirstName.data.userInfos.firstName);
         } else {
@@ -48,6 +51,7 @@ export function Dashboard() {
           error,
           "Erreur lors de la récupération des données du firstName"
         );
+        console.log(error, "Erreur lors de la récupération des données du firstName");
         setUserExists(false);
       }
     }
