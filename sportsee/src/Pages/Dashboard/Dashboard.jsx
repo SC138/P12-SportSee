@@ -12,49 +12,40 @@ import { CardInfos } from "../../components/CardInfos/CardInfos";
 import logo from "../../assets/images/logo.png";
 
 export function Dashboard() {
-  // Récupération de l'ID de l'utilisateur depuis l'URL grâce à useParams
+  // Récupération de l'ID de l'utilisateur dans l'URL
   const { id } = useParams();
 
-  // userName pour stocker le prénom de l'utilisateur
+  // Déclaration des états
   const [userName, setUserName] = useState("");
-
-  // userExists pour vérifier si l'utilisateur existe
   const [userExists, setUserExists] = useState(true);
 
-  // useEffect pour effectuer la requête API après le rendu du composant
-  useEffect(() => {
-    // Fonction asynchrone pour obtenir les données de l'utilisateur
-    async function getUserData() {
-      try {
-        // Requête API pour obtenir les informations de l'utilisateur
-        const userFirstName = await DataService.getUser(id);
-        console.log("🚀 ~ file: Dashboard.jsx:31 ~ getUserData ~ userFirstName:", userFirstName)
+  // Utilisation du hook useEffect pour récupérer les données de l'utilisateur
+useEffect(() => {
+  // Fonction asynchrone pour obtenir les données de l'utilisateur
+  async function getUserData() {
+    try {
+      // Requête API pour obtenir les informations de l'utilisateur
+      const userFirstName = await DataService.getUser(id);
+      console.log("🚀 ~ file: Dashboard.jsx ~ getUserData ~ userFirstName:", userFirstName);
 
-        // Vérification des données reçues
-        if (
-          userFirstName &&
-          userFirstName.data &&
-          userFirstName.data.userInfos
-        ) {
-
-        // Vérification des données reçues
-        if (userFirstName && userFirstName.data && userFirstName.data.userInfos) {
-          // Si les données sont valides, mise à jour du prénom de l'utilisateur
-          setUserName(userFirstName.data.userInfos.firstName);
-        } else {
-          // Si les données ne sont pas valides, mise à jour de l'état pour indiquer que l'utilisateur n'existe pas
-          setUserExists(false);
-        }
-      } catch (error) {
-        // En cas d'erreur, affichage dans la console et mise à jour de l'état pour indiquer que l'utilisateur n'existe pas
-        console.log(
-          error,
-          "Erreur lors de la récupération des données du firstName"
-        );
-        console.log(error, "Erreur lors de la récupération des données du firstName");
+      // Vérification des données reçues
+      if (userFirstName && userFirstName.data && userFirstName.data.userInfos) {
+        // Si les données sont valides, mise à jour du prénom de l'utilisateur
+        setUserName(userFirstName.data.userInfos.firstName);
+      } else {
+        // Si les données ne sont pas valides, mise à jour de l'état pour indiquer que l'utilisateur n'existe pas
         setUserExists(false);
       }
+    } catch (error) {
+      // En cas d'erreur, affichage dans la console et mise à jour de l'état pour indiquer que l'utilisateur n'existe pas
+      console.log(
+        error,
+        "Erreur lors de la récupération des données du firstName"
+      );
+      setUserExists(false);
     }
+  }
+
     // Appel de la fonction getUserData
     getUserData();
   }, [id]); // Le useEffect se déclenchera à chaque changement de l'ID
